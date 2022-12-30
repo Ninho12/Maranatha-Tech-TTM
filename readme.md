@@ -49,9 +49,9 @@ Doação de 30 reias é doação Sênior;
 
 Os links das doações:
 
-1. Doação Junior
-2. Doação Pleno
-3. Doação Sênior
+1. [Doação Junior](https://pag.ae/7Y-1NQ2M7)
+2. [Doação Pleno](https://pag.ae/7Y-1Q6D68)
+3. [Doação Sênior](https://pag.ae/7Y-1Rm3cP)
 
 Pronto agora que eu terminei de fala das doações agora vamos para a parte das orações.
 
