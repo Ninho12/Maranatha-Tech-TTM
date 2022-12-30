@@ -36,3 +36,29 @@ O nome da empresa vai ser: Maranatha Tech TTM.
 ### Codificando o projeto
 
 Codificando o projeto é simples porque os codigos serão html5 basico e você pode escrever sobre assuntos que você tem conhecimento.
+
+### Doações
+
+Você pode doar de acordo com o seu coração, tem esses tipos de doação:
+
+Doação de 10 reais é doação Junior;
+
+Doação de 20 reais é doação Pleno;
+
+Doação de 30 reias é doação Sênior;
+
+Os links das doações:
+
+1. Doação Junior
+2. Doação Pleno
+3. Doação Sênior
+
+Pronto agora que eu terminei de fala das doações agora vamos para a parte das orações.
+
+### Oraçẽos
+
+Você se for Católico você pode ajudar esse projeto colocando na suas inteneçẽos esse nosso projeto para que tenha sucesso e consigua realizar a sua missão.
+
+Meu muito Obrigado!
+
+Salve Maria Santissima!
