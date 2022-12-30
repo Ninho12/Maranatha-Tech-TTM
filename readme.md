@@ -2,9 +2,9 @@
 
 Maranatha Tech TTM é um projeto open-source para os estudantes de programação ou para os programadores de inicio de carreira que deseja aprender mais e contribuir para comunidade open-source.
 
-O projeto é sobre um blog de tecnologia que vai reunir vairos artigos relacionados a area de desenvolvimento. Aí que você entrar porque nesse blog você vai ser um escritor de artigo ou um atualizador de artigo.
+O projeto é sobre um blog de tecnologia que vai reunir varios artigos relacionados a area de desenvolvimento. Aí que você entra, porque nesse blog você vai ser um escritor de artigo ou um atualizador de artigo.
 
-Vamos ser escritores raiz vamos escrever nosso conteudo com os codigos html.
+Vamos ser escritores raizes! Vamos escrever nosso conteudo com os codigos html.
 
 ## Links Importanes
 
