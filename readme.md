@@ -9,7 +9,7 @@ Temos alguns links importantes para você fazer parte do nosso projeto. Mas ante
 Os links são esses:
 
 1. [Nossa Comunidade](https://discord.gg/PkkxbE4U) (Discord)
-2. 
+2. [Documentação](https://github.com/Ninho12/)
 
 ## Informaçẽos Importantes
 
