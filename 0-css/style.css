@@ -1,0 +1,24 @@
+body{
+    background-color: #ccc;
+}
+
+h1{
+    padding: 10px;
+    width: auto;
+    margin-top: 20px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: white;
+}
+
+div{
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    height: auto;
+    width: 50%;
+    min-width: 250px;
+    max-width: 700px;
+    margin: 20px auto;
+}
