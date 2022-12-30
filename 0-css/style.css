@@ -1,3 +1,14 @@
+/*
+    Este arquivo é responsavel pelo
+    estilo do projeto. Não usamos classes
+    estilizamos apena utilizando tags
+
+    Esse projeto é um projeto simples que 
+    focamos mais no conteudo do que na estilização,
+    o objetivo desse projeto é iniciar os programadores
+    em um projeto open-source para eles ganharem experiencia.
+
+*/
 body{
     background-color: #ccc;
 }
