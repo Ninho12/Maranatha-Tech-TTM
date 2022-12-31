@@ -26,7 +26,7 @@ Os links são esses:
 Com esses links você pode fazer parte do nosso projeto e entender mais sobre ele.
 
 
-## Informaçẽos Importantes
+## Informações Importantes
 
 Para colaborar com o nosso projeto existe 3 formas de ajudar-nos que são essas:
 
