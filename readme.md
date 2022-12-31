@@ -1,10 +1,18 @@
 # Maranatha Tech TTM
 
-Maranatha Tech TTM é um projeto open-source para os estudantes de programação ou para os programadores de inicio de carreira que deseja aprender mais e contribuir para comunidade open-source.
+Maranatha Tech TTM é um projeto open-source e uma empresa Católica que tem como Missão Evangelizar o mundo e empregar os Católicos no setor da Tecnologia.
 
-O projeto é sobre um blog de tecnologia que vai reunir varios artigos relacionados a area de desenvolvimento. Aí que você entra, porque nesse blog você vai ser um escritor de artigo ou um atualizador de artigo.
+O projeto é sobre um repositorio de testemunhos sobre o poder de Deus na Nossas Vidas. Esse repositorio vai reunir varios testemunhos de varias areas diferentes da nossas vidas como:
 
-Vamos ser escritores raizes! Vamos escrever nosso conteudo com os codigos html.
+1. Vida Espiritual (Relacionamento com Deus)
+2. Vida Amorosa (Relacionamento com a(o) amada(o))
+3. Vida Familiar (Relacionamento com a familia)
+4. Vida Social (Relacinamento com os amigos)
+5. Vida Profissional (Relacionamento com o trabalho)
+6. Vida Financeira (Relacionamento com o dinheiro)
+7. Vida Fisica (Relacionamento com a Saúde)
+
+Todos os Católicos tem Testemunhos para compartilhar com o mundo para Glorifica a Deus!
 
 ## Links Importantes
 
@@ -28,14 +36,8 @@ Para colaborar com o nosso projeto existe 3 formas de ajudar-nos que são essas:
 
 Lembrando que você só vai doar dinheiro se você gostar muito do nosso projeto e aprender muito com o nosso projeto.
 
-Com o dinheiro recebido das doações que eu vou receber eu vou criar uma empresa de Tecnologia e Católica que vai empregar muitos Devs Católicos.
+Com o dinheiro recebido das doações que eu vou receber eu vou investir na empresa de Tecnologia e Católica Maranatha Tech TTM que vai empregar muitos Devs Católicos.
 
-O nome da empresa vai ser: Maranatha Tech TTM.
-
-
-### Codificando o projeto
-
-Codificando o projeto é simples porque os codigos serão html5 basico e você pode escrever sobre assuntos que você tem conhecimento.
 
 ### Doações
 
