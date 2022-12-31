@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "É um sistema de um blog de uma empresa Open-Source e Católica",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
