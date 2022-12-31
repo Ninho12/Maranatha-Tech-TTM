@@ -6,7 +6,7 @@ O projeto é sobre um blog de tecnologia que vai reunir varios artigos relaciona
 
 Vamos ser escritores raizes! Vamos escrever nosso conteudo com os codigos html.
 
-## Links Importanes
+## Links Importantes
 
 Temos alguns links importantes para você fazer parte do nosso projeto. Mas antes de tudo der uma estrela para o nosso projeto e um fork para você ter uma copia do nosso projeto no seu repositorio no github.
 
