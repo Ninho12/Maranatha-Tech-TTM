@@ -1,36 +1,32 @@
 // Importação
 const express = require('express')
-const Usuario = require('./db/usuarios');
+const rotasUsuario = require('./routers/usuarioRouters')
 
 // Usando o Express
 const app = express()
 
 
 // Configurar o EJS como o template engine
-app.set('view engine', 'ejs')
+// app.set('view engine', 'ejs')
 
+
+// Comandos para trabalhar com Json
+app.use(
+    express.urlencoded({
+      extended: true,
+    }),
+)  
+app.use(express.json())
 
 // Rota Principal
-//app.get('/', (req, res) => {
-    //res.render('index', { title: 'Olá, Mundo!' })
-//});
-
-// Listar todos os usuarios
 app.get('/', (req, res) => {
-    Usuario.find({}, (err, users) => {
-        if (err) throw err;
-        res.send(users);
-    });
-});
+    res.json({ message: 'Oi Express!' })
+})
 
-// Adicionar todos os usuarios
-app.post('/adicionar', (req, res) => {
-    const pessoa = new Usuario({ nome: 'João', email: 'joao@gmail.com' });
-    Usuario.save((err, pessoa) => {
-        if (err) throw err;
-        res.send(pessoa);
-    });
-});
+// Carregando as rotas do Usuario
+app.use('/api/v1/', rotasUsuario)
+
+  
 
 // Servidor Rodando.
 app.listen(3000, () => {

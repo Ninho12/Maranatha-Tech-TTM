@@ -6,11 +6,12 @@ const Schema = mongoose.Schema;
 const EsquemaUsuario = new Schema({
     
     nome: String,
-    email: String
+    email: String,
+    senha: String
 
 });
 
-const Usuario = mongoose.model('User', EsquemaUsuario);
+const Usuario = mongoose.model('Usuario', EsquemaUsuario);
 
 // Exportar o arquivo
 module.exports = Usuario;
