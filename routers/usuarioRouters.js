@@ -24,9 +24,9 @@ rota.get("/usuario/:id", checkToken, async (req, res) => {
   const id = req.params.id;
 
   // check if user exists
-  const user = await User.findById(id, "-password");
+  const usuario = await Usuario.findById(id, "-password");
 
-  if (!user) {
+  if (!usuario) {
     return res.status(404).json({ msg: "Usuário não encontrado!" });
   }
 
