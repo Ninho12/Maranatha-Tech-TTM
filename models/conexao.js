@@ -3,7 +3,7 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://joaopaulojpsp:12041995@cluster0.wcohx6a.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://joaopaulojpsp:12041995@cluster0.wcohx6a.mongodb.net/maranathatechttm?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'Erro ao conectar ao MongoDB:'));

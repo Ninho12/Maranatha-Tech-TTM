@@ -5,34 +5,22 @@ const Usuario = require('../models/usuarios')
 const express = require('express')
 const rota = express.Router()
 
+// Importação importante para autenticação
+require("dotenv").config();
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+
 /*
     ROTAS PARA MANIPULAÇÃO
     DOS DADOS DOS USUARIOS
     DO SISTEMA.
 */
 
-// CRIANDO USUARIO COM METODO POST
-rota.post('/usuario', async (req, res) => {
-  const { nome, email, senha } = req.body
-
-  const usuario = {
-    nome,
-    email,
-    senha,
-  }
-  
-  try {
-    await Usuario.create(usuario)
-
-    res.status(201).json({ message: 'Usuario inserido no sistema com sucesso!' })
-  } catch (error) {
-    res.status(500).json({ erro: error })
-  }
-})
 
 
-// Private Route
-app.get("/usuario/:id", checkToken, async (req, res) => {
+// Rota privada de usuario
+rota.get("/usuario/:id", checkToken, async (req, res) => {
   const id = req.params.id;
 
   // check if user exists
@@ -62,7 +50,9 @@ function checkToken(req, res, next) {
   }
 }
 
-app.post("/register", async (req, res) => {
+// CRIANDO USUARIO COM METODO POST
+// Rota Publica  de registro
+rota.post("/registrar", async (req, res) => {
   const { nome, email, senha, confirmaSenha } = req.body;
 
   // validations
@@ -85,25 +75,25 @@ app.post("/register", async (req, res) => {
   }
 
   // check if user exists
-  const userExists = await User.findOne({ email: email });
+  const usuarioExiste = await User.findOne({ email: email });
 
-  if (userExists) {
+  if (usuarioExiste) {
     return res.status(422).json({ msg: "Por favor, utilize outro e-mail!" });
   }
 
   // create password
   const salt = await bcrypt.genSalt(12);
-  const passwordHash = await bcrypt.hash(password, salt);
+  const senhaHash = await bcrypt.hash(senha, salt);
 
   // create user
-  const user = new User({
-    name,
+  const usuario = new Usuario({
+    nome,
     email,
-    passwordHash,
+    senhaHash,
   });
 
   try {
-    await user.save();
+    await usuario.save();
 
     res.status(201).json({ msg: "Usuário criado com sucesso!" });
   } catch (error) {
@@ -111,7 +101,8 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.post("/login", async (req, res) => {
+// Login para o usuario
+rota.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   // validations
@@ -131,9 +122,9 @@ app.post("/login", async (req, res) => {
   }
 
   // check if password match
-  const checkPassword = await bcrypt.compare(password, user.password);
+  const checkSenha = await bcrypt.compare(senha, usuario.senha);
 
-  if (!checkPassword) {
+  if (!checkSenha) {
     return res.status(422).json({ msg: "Senha inválida" });
   }
 
@@ -158,24 +149,6 @@ app.post("/login", async (req, res) => {
 rota.get('/usuarios', async (req, res) => {
   try {
     const usuario = await Usuario.find()
-
-    res.status(200).json(usuario)
-  } catch (error) {
-    res.status(500).json({ erro: error })
-  }
-})
-
-// MOSTRANDO APENAS UM USUARIO
-rota.get('/usuario/:id', async (req, res) => {
-  const id = req.params.id
-
-  try {
-    const usuario = await Usuario.findOne({ _id: id })
-
-    if (!usuario) {
-      res.status(422).json({ message: 'Usuário não encontrado!' })
-      return
-    }
 
     res.status(200).json(usuario)
   } catch (error) {
