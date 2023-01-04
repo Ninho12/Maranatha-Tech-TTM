@@ -1,13 +1,21 @@
 // Importação
 const express = require('express')
+const exphbs  = require('express-handlebars');
+
 const rotasUsuario = require('./routers/usuarioRouters')
 
 // Usando o Express
 const app = express()
 
 
-// Configurar o EJS como o template engine
-// app.set('view engine', 'ejs')
+// Configure o Handlebars como o engine de templates
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+// Rotas principal de views
+app.get('/', (req, res) => {
+    res.render("home", nome)
+})
 
 
 // Comandos para trabalhar com Json
@@ -18,8 +26,8 @@ app.use(
 )  
 app.use(express.json())
 
-// Rota Principal
-app.get('/', (req, res) => {
+// Rota Principal json
+app.get('/json', (req, res) => {
     res.json({ message: 'Oi Express!' })
 })
 
