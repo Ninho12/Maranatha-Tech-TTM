@@ -30,7 +30,7 @@ rota.get("/usuario/:id", checkToken, async (req, res) => {
     return res.status(404).json({ msg: "Usuário não encontrado!" });
   }
 
-  res.status(200).json({ user });
+  res.status(200).json({ usuario });
 });
 
 function checkToken(req, res, next) {
@@ -75,21 +75,18 @@ rota.post("/registrar", async (req, res) => {
   }
 
   // check if user exists
-  const usuarioExiste = await User.findOne({ email: email });
+  const usuarioExiste = await Usuario.findOne({ email: email });
 
   if (usuarioExiste) {
     return res.status(422).json({ msg: "Por favor, utilize outro e-mail!" });
   }
 
-  // create password
-  const salt = await bcrypt.genSalt(12);
-  const senhaHash = await bcrypt.hash(senha, salt);
 
   // create user
   const usuario = new Usuario({
     nome,
     email,
-    senhaHash,
+    senha,
   });
 
   try {
@@ -103,26 +100,26 @@ rota.post("/registrar", async (req, res) => {
 
 // Login para o usuario
 rota.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, senha } = req.body;
 
   // validations
   if (!email) {
     return res.status(422).json({ msg: "O email é obrigatório!" });
   }
 
-  if (!password) {
+  if (!senha) {
     return res.status(422).json({ msg: "A senha é obrigatória!" });
   }
 
   // check if user exists
-  const user = await User.findOne({ email: email });
+  const usuario = await Usuario.findOne({ email: email });
 
-  if (!user) {
+  if (!usuario) {
     return res.status(404).json({ msg: "Usuário não encontrado!" });
   }
 
   // check if password match
-  const checkSenha = await bcrypt.compare(senha, usuario.senha);
+  const checkSenha = (senha === usuario.senha);
 
   if (!checkSenha) {
     return res.status(422).json({ msg: "Senha inválida" });
@@ -133,7 +130,7 @@ rota.post("/login", async (req, res) => {
 
     const token = jwt.sign(
       {
-        id: user._id,
+        id: usuario._id,
       },
       secret
     );
@@ -148,7 +145,7 @@ rota.post("/login", async (req, res) => {
 // LISTANDO TODOS OS USUARIOS
 rota.get('/usuarios', async (req, res) => {
   try {
-    const usuario = await Usuario.find()
+    const usuario = await Usuario.find({})
 
     res.status(200).json(usuario)
   } catch (error) {
@@ -159,7 +156,8 @@ rota.get('/usuarios', async (req, res) => {
 
 // PATCH É PARA ATUALIZAR TODO O CONTEUDO DO 
 // MODELO, NO CASO O MODELO USUARIO
-rota.patch('/usuario/:id', async (req, res) => {
+rota.patch('/usuario/:id', checkToken, async (req, res) => {
+
   const id = req.params.id
 
   const { nome, email, senha } = req.body
@@ -186,7 +184,8 @@ rota.patch('/usuario/:id', async (req, res) => {
 
 
 // DELETANDO UM USUARIO
-rota.delete('/usuario/:id', async (req, res) => {
+rota.delete('/usuario/:id', checkToken, async (req, res) => {
+
   const id = req.params.id
 
   const usuario = await Usuario.findOne({ _id: id })
